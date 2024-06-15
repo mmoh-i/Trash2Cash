@@ -16,45 +16,43 @@ Welcome to the repository for our ongoing project! This README provides an overv
 The project trash2cash is an ecofreindly project built to enhace proper disposal of waste while earning, this project shall utilize the google gemini 1.5 flash model whereby users can be able to snap thier intended disposable material and would be generated a desctiption of a proper place to dispose linkning you to the closest recycle companny or waste collectors around your location.
 
 ## Project Structure
-Trash2Cash/
-├── data/                          # Data used in the project
-│   ├── raw/                       # Raw data
-│   ├── processed/                 # Processed data
-├── notebooks/                     # Jupyter notebooks
-│   ├── training_notebook.ipynb    # Notebook for training and fine-tuning the model
-├── src/                           # Source code
-│   ├── __init__.py                # Initialize the package
-│   ├── app.py                     # Flask app entry point
-│   ├── config.py                  # Configuration settings
-│   ├── models.py                  # Database models
-│   ├── utils/                     # Utility functions
-│   │   ├── __init__.py
-│   │   ├── image_processing.py    # Image processing functions
-│   │   ├── location_services.py   # Location-based services
-│   ├── routes/                    # Application routes
-│   │   ├── __init__.py
-│   │   ├── main.py                # Main routes
-├── tests/                         # Unit tests
-│   ├── __init__.py
-│   ├── test_app.py                # Tests for the Flask app
-│   ├── test_image_processing.py   # Tests for image processing
-├── firebase/                      # Firebase specific files
-│   ├── firebase.json              # Firebase configuration
-│   ├── firestore.indexes.json     # Firestore indexes
-│   ├── firestore.rules            # Firestore security rules
-│   ├── functions/                 # Firebase Cloud Functions
-│   │   ├── .eslintrc.json
-│   │   ├── index.js               # Main entry point for Cloud Functions
-│   │   ├── package.json           # Node.js dependencies for Cloud Functions
-│   │   ├── src/                   # Source code for Cloud Functions
-│   │       ├── __init__.py
-│   │       ├── main.py            # Main routes for Cloud Functions
-├── requirements.txt               # Python dependencies
-├── .env                           # Environment variables
-├── .gitignore                     # Git ignore file
-├── README.md                      # Project README
-└── LICENSE                        # License file
-
+── data/ # Data used in the project
+│ ├── raw/ # Raw data
+│ ├── processed/ # Processed data
+├── notebooks/ # Jupyter notebooks
+│ ├── training_notebook.ipynb # Notebook for training and fine-tuning the model
+├── src/ # Source code
+│ ├── init.py # Initialize the package
+│ ├── app.py # Flask app entry point
+│ ├── config.py # Configuration settings
+│ ├── models.py # Database models
+│ ├── utils/ # Utility functions
+│ │ ├── init.py
+│ │ ├── image_processing.py # Image processing functions
+│ │ ├── location_services.py # Location-based services
+│ ├── routes/ # Application routes
+│ │ ├── init.py
+│ │ ├── main.py # Main routes
+├── tests/ # Unit tests
+│ ├── init.py
+│ ├── test_app.py # Tests for the Flask app
+│ ├── test_image_processing.py # Tests for image processing
+├── firebase/ # Firebase specific files
+│ ├── firebase.json # Firebase configuration
+│ ├── firestore.indexes.json # Firestore indexes
+│ ├── firestore.rules # Firestore security rules
+│ ├── functions/ # Firebase Cloud Functions
+│ │ ├── .eslintrc.json
+│ │ ├── index.js # Main entry point for Cloud Functions
+│ │ ├── package.json # Node.js dependencies for Cloud Functions
+│ │ ├── src/ # Source code for Cloud Functions
+│ │ ├── init.py
+│ │ ├── main.py # Main routes for Cloud Functions
+├── requirements.txt # Python dependencies
+├── .env # Environment variables
+├── .gitignore # Git ignore file
+├── README.md # Project README
+└── LICENSE # License file
 
 ## Team Members
 
