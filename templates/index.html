@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash2Cash</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="title">
+                <h1>Trash2Cash</h1>
+            </div>
+            <ul id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section class="upload-section">
+            <input type="text" class="search-bar" placeholder="Search recycle stations">
+            <div class="ops-button">
+                <button class="upload-btn">Upload Image <i class="fas fa-upload"></i></button>
+                <button class="photo-btn">Take Photo <i class="fas fa-camera"></i></button>
+            </div>
+            <input type="file" id="uploadInput" accept="image/*" style="display:none" onchange="previewImage(event)">
+            <video id="camera" style="display:none" autoplay></video>
+            <canvas id="canvas" style="display:none"></canvas>
+            <div class="prompt-section">
+                <input type="text" class="prompt-bar" placeholder="Prompt the type of trash product you wish to dispose">
+                <button class="prompt-btn">&#x27A4;</button>
+            </div>
+        </section>
+        <section class="action-section">
+            <a href="#"><i class="fas fa-play-circle"></i> See it in action</a>
+            <p>The Team</p>
+        </section>
+        <section class="contact-section">
+            
+            <form action="/send_message" method="post">
+                <h2>Send Us a message</h2>
+                <div id="inner-form">
+                    <input type="text" name="first_name" placeholder="Your first name" required>
+                    <input type="text" name="last_name" placeholder="Your last name" required>
+                </div>
+                <div class="inner-form1">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                </div>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p><bold>Copyright&copy;Trash2Cash 2024</bold></p>
+    </footer>
+    <script src="static/js/scripts.js"></script>
+</body>
+</html>
