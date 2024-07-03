@@ -70,19 +70,26 @@ Trash2Cash/
 ## Setup Instructions to be update consequently.....
 
 1. **Clone the repository**:
-    To be updated...
+    ``` git clone https://github.com/your-username/Trash2Cash.git`
+cd Trash2Cash ```
 
 2. **Create and activate a virtual environment**:
+   For windows
+   ```python -m venv venv
+     venv\Scripts\activate```
+
+   For macOS/Linux
+   ``` python3 -m venv venv
+    source venv/bin/activate```
+   
+4. **Install the required dependencies**:
+    ```pip install -r requirements.txt```
+
+5. **Set up environment variables**:
     To be updated...
 
-3. **Install the required dependencies**:
-    To be updated...
-
-4. **Set up environment variables**:
-    To be updated...
-
-5. **Run initial setup scripts** (if any):
-    To be updated...
+6. **Run initial setup scripts** (if any):
+   CLI  ```python app.py ```
 
 ## Usage
 
