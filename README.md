@@ -72,7 +72,7 @@ Trash2Cash/
 1. **Clone the repository**:
 2. 
     ``` git clone https://github.com/your-username/Trash2Cash.git`
-        cd Trash2Cash ```
+     ```cd Trash2Cash```
 
 3. **Create and activate a virtual environment**:
    For windows
