@@ -6,6 +6,8 @@
     <title>Trash2Cash</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
 </head>
 <body>
     <header>
@@ -17,7 +19,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Partners</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="/signup">FAQ</a></li>
             </ul>
             <a href="javascript:void(0)" class="icon" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i>
@@ -28,8 +30,8 @@
         <section class="upload-section">
             <input type="text" class="search-bar" placeholder="Search recycle stations">
             <div class="ops-button">
-                <button class="upload-btn">Upload Image <i class="fas fa-upload"></i></button>
-                <button class="photo-btn">Take Photo <i class="fas fa-camera"></i></button>
+                <button class="upload-btn" onclick="requireLogin()">Upload Image <i class="fas fa-upload"></i></button>
+                <button class="photo-btn" onclick="requireLogin()">Take Photo <i class="fas fa-camera"></i></button>
             </div>
             <input type="file" id="uploadInput" accept="image/*" style="display:none" onchange="previewImage(event)">
             <video id="camera" style="display:none" autoplay></video>
@@ -44,7 +46,6 @@
             <p>The Team</p>
         </section>
         <section class="contact-section">
-            
             <form action="/send_message" method="post">
                 <h2>Send Us a message</h2>
                 <div id="inner-form">
@@ -62,6 +63,74 @@
     <footer>
         <p><bold>Copyright&copy;Trash2Cash 2024</bold></p>
     </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button class="but" type="submit">Login</button>
+                <p>or login using</p>
+                <div class="social-buttons">
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    <button type="button" class="social-btn facebook">Login with Facebook</button>
+                </div>
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function requireLogin() {
+            if (!isUserLoggedIn()) {
+                document.getElementById('loginModal').style.display = 'block';
+            } else {
+                // Continue with the action
+            }
+        }
+
+        function isUserLoggedIn() {
+            // Replace with actual logic to check if the user is logged in
+            return false;
+        }
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+            var id_token = googleUser.getAuthResponse().id_token;
+            fetch('/google-login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({token: id_token})
+            }).then(response => response.json())
+              .then(data => {
+                  console.log(data);
+                  // Update login status or close modal
+              });
+        }
+    </script>
 </body>
 </html>

@@ -18,6 +18,11 @@ def team():
 def signup():
     if request.method == 'POST':
         # Handle sign up logic
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+    
         return redirect(url_for('home'))
     return render_template('signup.html')
 

@@ -10,10 +10,6 @@ header {
     background-color: #777;
     color: #fff;
     padding: 1rem;
-    /* position: fixed; */
-    /* width: 100%; */
-    top: 0;
-    /* z-index: 1000; */
 }
 
 header .title {
@@ -36,7 +32,6 @@ nav {
     display: flex;
     margin: 0;
     padding: 0;
-    margin: auto;
 }
 
 nav ul li {
@@ -44,7 +39,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color:#fff;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -79,15 +74,15 @@ main {
 .search-bar::placeholder {
     color: #585757;
 }
-.ops-button{
+.ops-button {
     width: 100%;
     margin: 5em;
     display: flex;
     gap: 20px;
     justify-content: center;
 }
-.ops-button button{
-    width:150px;
+.ops-button button {
+    width: 150px;
 }
 
 .upload-btn,
@@ -95,15 +90,11 @@ main {
 .prompt-btn {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
-    /* background-color: #fff; */
     background-color: #4d4c4c;
     color: #fff;
-    /* border: 2px solid #000; */
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 8px 
-    0 rgb(128, 128, 128), 0 6px 
-    20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgb(128, 128, 128), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .prompt-btn {
     margin: 5px;
@@ -113,7 +104,7 @@ main {
 .upload-btn i,
 .photo-btn i {
     margin-left: 0.9rem;
-    margin-right:0rem;
+    margin-right: 0rem;
     float: right;
 }
 
@@ -149,10 +140,11 @@ main {
     text-align: left;
     padding: 2rem;
     display: flex;
+   
     justify-content: flex-end;
 }
 .contact-section h2 {
-    float: right;
+float: right;
 }
 .contact-section form {
     border-radius: 5px;
@@ -166,23 +158,21 @@ main {
 #inner-form {
     flex-direction: column;
     width: 100%;
-    
 }
 .inner-form1 {
     width: 100%;
     padding: 0.2em 0;
-    
 }
 #inner-form input {
-    width:187px;
+    width: 187px;
     margin: 0.2rem 0;
     background-color: #fff;
     color: #000;
     border: solid #000;
     border-radius: 4px;
 }
-.inner-form1 input{
-    width:97%;
+.inner-form1 input {
+    width: 97%;
     margin: 0;
     height: 20px;
     border: solid;
@@ -198,8 +188,8 @@ main {
     border-radius: 4px;
 }
 
-.contact-section textarea{
-    height:10em;
+.contact-section textarea {
+    height: 10em;
 }
 .contact-section button {
     background-color: #8a8888;
@@ -207,7 +197,7 @@ main {
     border: 2px solid #000;
     border-radius: 4px;
     height: 25px;
-    width:10em;
+    width: 10em;
     margin-bottom: 1em;
 }
 
@@ -215,41 +205,33 @@ footer {
     text-align: center;
     padding: 1rem;
     color: #000;
-    background-color: #f5f5f5;;
-    /* position: fixed; */
-    bottom: 0;
+    background-color: #f5f5f5;
 }
 
 @media (max-width: 768px) {
     nav {
-        position: relative;
-        overflow: hidden;
+    position: relative;
+    overflow: hidden;
     }
     #navLinks {
         display: none;
-        /* width: 100%;
-        text-align: center; */
     }
-    
     nav a.icon {
         display: block;
         color: #ffffff;
         font-size: 1.5rem;
         cursor: pointer;
-        /* position: absolute; */
     }
-
-    .ops-button{
+    .ops-button {
         width: 100%;
         display: flex;
         justify-content: center;
     }
-    .ops-button button{
-        width:35%;
+    .ops-button button {
+        width: 35%;
     }
-    
-    .search-bar{
-        width:30%
+    .search-bar {
+        width: 30%;
     }
     .prompt-bar {
         width: 350px;
@@ -259,11 +241,102 @@ footer {
         width: 40%;
     }
     .contact-section input,
-    .contact-section textarea{
-        width:100%;
+    .contact-section textarea {
+        width: 100%;
     }
     .upload-section {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #000;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.close-btn
+,
+.close-btn
+{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input-group {
+    margin: 10px 0;
+    
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border:none;
+}
+
+.but {
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    border:none;
+}
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.social-btn {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.g-signin2 {
+    margin: 0 5px;
 }
