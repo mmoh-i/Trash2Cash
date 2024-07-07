@@ -27,20 +27,18 @@ Welcome to Trash2Cash, an eco-friendly project built for the Google Gemini compe
 
 ## Setup Instructions to be update consequently.....
 
-1. **Clone the repository**:
-2. 
-    `git clone https://github.com/your-username/Trash2Cash.git
-     cd Trash2Cash`
+1. **Clone the repository**: 
+    `git clone https://github.com/your-username/Trash2Cash.git`
+     `cd Trash2Cash`
 
 3. **Create and activate a virtual environment**:
    For windows
-   
-   `python -m venv venv
-   venv\Scripts\activate`
+   `python -m venv venv`
+   `venv\Scripts\activate`
 
    For macOS/Linux
-   ` python3 -m venv venv
-    ource venv/bin/activate`
+   ` python3 -m venv venv`
+    `source venv/bin/activate`
    
 5. **Install the required dependencies**:
     `pip install -r requirements.txt`
