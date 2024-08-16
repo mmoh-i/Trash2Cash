@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup - Trash2Cash</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            z-index: 1;
+        }
+        
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: "Pacifico", cursive;
+        }
+        
+        .login-option {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0b0b0b;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .google-login {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .email-login, .email-signup {
+            background-color: #f5f5f5;
+        }
+        
+        .login-option:hover {
+            background-color: #f0f0f0;
+            color:#000000;
+        }
+
+        .signup-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link {
+            color: #000000;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Log in to Trash2Cash</h2>
+        <a href="{{ url_for('google_login') }}" class="login-option google-login">
+            <i class="fab fa-google"></i> Continue with Google
+        </a>
+        <a href="#" class="login-option email-login" id="email-login-button">
+            <i class="far fa-envelope"></i> Continue with email
+        </a>
+        <p class="signup-text">Don't have an account? <a href="#" class="signup-link" id="signup-link">Sign up</a></p>
+    </div>
+
+    <script>
+        document.getElementById('email-login-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            alert('Email login functionality to be implemented');
+        });
+
+        document.getElementById('signup-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Changesa the content of the container to that of signup
+            const container = document.querySelector('.login-container');
+            container.innerHTML = `
+                <h2>Sign up for Trash2Cash</h2>
+                <a href="{{ url_for('google_login') }}" class="login-option google-login">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </a>
+                <p class="signup-text">Already have an account? <a href="#" class="signup-link" id="login-link">Log in</a></p>
+            `;
+
+            document.getElementById('login-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                location.reload(); // This will reload the page, showing the login form again
+            });
+        });
+    </script>
+</body>
+</html>
